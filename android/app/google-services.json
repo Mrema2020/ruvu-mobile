@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "329277104561",
+    "firebase_url": "https://ruvu-reporting-application-default-rtdb.firebaseio.com",
+    "project_id": "ruvu-reporting-application",
+    "storage_bucket": "ruvu-reporting-application.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:329277104561:android:d382255872df561c7c9d90",
+        "android_client_info": {
+          "package_name": "com.example.ruvu_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "329277104561-up8kud0rjc20ot739qfnki9g0460tuff.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCpiVsrFcBQujEqsncwZcwniXUlLuu2sQM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "329277104561-up8kud0rjc20ot739qfnki9g0460tuff.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:329277104561:android:9b7207c15a6be8567c9d90",
+        "android_client_info": {
+          "package_name": "com.example.web_dashboard_app_tut"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "329277104561-up8kud0rjc20ot739qfnki9g0460tuff.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCpiVsrFcBQujEqsncwZcwniXUlLuu2sQM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "329277104561-up8kud0rjc20ot739qfnki9g0460tuff.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
