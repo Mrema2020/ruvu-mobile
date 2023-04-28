@@ -1,6 +1,9 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:ruvu_app/screens/profile.dart';
 import 'package:ruvu_app/screens/report_page.dart';
+import 'package:ruvu_app/screens/rulesPage.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -10,7 +13,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   late GoogleMapController _controller;
   final LatLng _initialLocation =
-      const LatLng(-6.3833, 38.8667); // New York City coordinates
+      const LatLng(-6.3833, 38.8667); // Ruvu coordinates
 
   @override
   Widget build(BuildContext context) {
@@ -23,11 +26,14 @@ class _HomePageState extends State<HomePage> {
           children: [
             const DrawerHeader(
               decoration: BoxDecoration(
-                color: Colors.green,
+                image: DecorationImage(
+                    image: AssetImage('assets/ruvu_river.jpg'),
+                fit: BoxFit.fitWidth
+                )
               ),
               child: Center(
                 child: Text(
-                  'Ruvu App',
+                  'Ruvu reporting App',
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 24,
@@ -35,7 +41,6 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
             ),
-            const Divider(),
             ListTile(
               leading: const Icon(Icons.message),
               title: const Text('Report a problem'),
@@ -58,6 +63,10 @@ class _HomePageState extends State<HomePage> {
               title: const Text('My account'),
               onTap: () {
                 // Navigate to the help screen
+                Navigator.of(context).push(MaterialPageRoute(builder:(context) => const ProfilePage
+                  (email: 'engineerjarvis@gmail.com',
+                    username: 'Jarvis Engineer',
+                    mobile: '+255 785 545 384',)));
               },
             ),
             const Divider(),
@@ -66,14 +75,17 @@ class _HomePageState extends State<HomePage> {
               title: const Text('Rules'),
               onTap: () {
                 // Perform logout action
+                Navigator.of(context).push(MaterialPageRoute(builder:(context) => RulesPage()));
               },
             ),
             const Divider(),
             ListTile(
               leading: const Icon(Icons.exit_to_app),
               title: const Text('Exit'),
-              onTap: () {
+              onTap: () async {
                 // Perform logout action
+                await FirebaseAuth.instance.signOut();
+               //
               },
             ),
             const Divider(),
@@ -81,6 +93,7 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
       body: GoogleMap(
+        compassEnabled: true,
         myLocationButtonEnabled: true,
         myLocationEnabled: true,
         initialCameraPosition: CameraPosition(
@@ -92,9 +105,9 @@ class _HomePageState extends State<HomePage> {
         },
       ),
       floatingActionButton: SizedBox(
-        width: double.infinity,
+        width: 200,
         child: Padding(
-          padding: const EdgeInsets.all(10.0),
+          padding: const EdgeInsets.all(20.0),
           child: ClipRRect(
             borderRadius: BorderRadius.circular(20.0),
             child: ElevatedButton(
