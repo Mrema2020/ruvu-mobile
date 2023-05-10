@@ -45,7 +45,7 @@ class _HomePageState extends State<HomePage> {
                       fit: BoxFit.fitWidth)),
               child: Center(
                 child: Text(
-                  'Ruvu reporting App',
+                  'Ruvu Tracking App',
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 24,

@@ -187,6 +187,7 @@ class _ReportPageState extends State<ReportPage> {
                   ),
                   TextFormField(
                     controller: _addressController,
+                    keyboardType: TextInputType.streetAddress,
                     decoration: const InputDecoration(
                       labelText: 'Address',
                       border: OutlineInputBorder(),

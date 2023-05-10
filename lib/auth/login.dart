@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:ruvu_app/auth/sign_up.dart';
 import 'package:ruvu_app/screens/home_page.dart';
+import 'package:ruvu_app/auth/login.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
